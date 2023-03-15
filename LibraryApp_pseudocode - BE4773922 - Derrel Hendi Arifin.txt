@@ -1,0 +1,17 @@
+BEGIN
+    FUNCTION pinjam_buku(id_anggota, id_buku)
+        IF anggota_belum_meminjam(id_anggota) THEN
+			Tambahkan_id_buku_tanggal_peminjaman_ke_list_peminjaman_anggota(id_anggota, id_buku, tanggal_sekarang())
+                PRINT "Buku berhasil dipinjam"
+		END IF
+	END FUNCTION
+    
+    FUNCTION kembalikan_buku(id_anggota, id_buku)
+        IF anggota_meminjam_buku(id_anggota, id_buku) THEN
+            Tambahkan_id_buku_dan_tanggal_pengembalian_ke_list_peminjaman_anggota(id_anggota, id_buku, tanggal_sekarang())
+            PRINT "Buku berhasil dikembalikan"
+        END IF
+    END FUNCTION
+    
+    
+  
